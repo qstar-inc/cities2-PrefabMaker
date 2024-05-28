@@ -1,0 +1,5 @@
+{
+  "autominify.enableHTMLMinification": false,
+  "autominify.enableSeparateFolderCSS": true,
+  "autominify.enableSeparateFolderJS": true
+}
