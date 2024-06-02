@@ -27,6 +27,6 @@ jobs:
           git add build_production -f && git commit -m "Build for deploy"
       - name: Deploy website
         run: |
-          git remote set-url origin https://${{secrets.DEPLOY_KEY}}@github.com/YOUR_USERNAME/REPOSITORY_NAME.git
+          git remote set-url origin https://${{secrets.DEPLOY_KEY}}@github.com/qstar_inc/cities2-PrefabMaker.git
           git subtree split --prefix build_production -b gh-pages
           git push -f origin gh-pages:gh-pages
