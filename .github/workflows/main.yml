@@ -25,8 +25,8 @@ jobs:
         run: npm run prod
       - name: Prepare production
         run: |
-          git config --global user.email "YOUR@EMAIL"
-          git config --global user.name "YOUR NAME"
+          git config --global user.email "qstar.inc@gmail.com"
+          git config --global user.name "qstar-inc"
           git add build_production -f && git commit -m "Build for deploy"
       - name: Deploy website
         run: |
