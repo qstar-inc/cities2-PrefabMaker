@@ -2,7 +2,7 @@
 
 return [
     'production' => false,
-    'baseUrl' => '/cities2-PrefabMaker',
+    'baseUrl' => '',
     'title' => 'Cities: Skylines II Prefab Maker',
     'description' => 'Create simple Prefab files for Cities: Skylines II',
     'collections' => [],
