@@ -1,9 +1,14 @@
 const mix = require("laravel-mix");
 require("laravel-mix-jigsaw");
+const path = require("path");
+
+const isProduction = mix.inProduction();
+const envConfig = isProduction
+  ? path.resolve(__dirname, "source/_assets/js/env.prod.js")
+  : path.resolve(__dirname, "source/_assets/js/env.dev.js");
 
 mix.disableSuccessNotifications();
 mix.setPublicPath("source/assets/build");
-mix.copy("source/_data", "source/assets/build/data");
 
 mix
   .jigsaw()
@@ -16,5 +21,14 @@ mix
   .options({
     processCssUrls: false,
   })
-  .setResourceRoot("/cities2-PrefabMaker/assets/build/")
-  .version();
+  .webpackConfig({
+    resolve: {
+      alias: {
+        "@env": envConfig,
+      },
+    },
+  });
+
+if (isProduction) {
+  mix.version();
+}

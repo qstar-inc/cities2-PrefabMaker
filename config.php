@@ -1,13 +1,17 @@
 <?php
 
+$baseUrl = '';
+$repo = "";
+
 return [
     'production' => false,
-    'baseUrl' => '',
+    'baseUrl' => $baseUrl,
     'title' => 'Cities: Skylines II Prefab Maker',
     'description' => 'Create simple Prefab files for Cities: Skylines II',
     'collections' => [],
-    'url' => 'https://qstar-inc.github.io/cities2-PrefabMaker',
+    'url' => $baseUrl,
     'keywords' => 'citiesskylines2, cities-skylines-2, cs2, skylines2, cities2',
     'author' => 'StarQ',
-    'images' => 'assets/images',
+    'images' => $repo . "/assets/images",
+    'repo' => $repo,
 ];

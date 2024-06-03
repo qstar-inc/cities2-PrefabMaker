@@ -1,7 +1,12 @@
 import { loadJSON } from "../utils/loadJSON";
+import { repoUrl } from "@env";
 
 $(document).ready(function () {
-  loadJSON("#companies_type", "/assets/data/companyGUID.json", "company");
+  loadJSON(
+    "#companies_type",
+    repoUrl + "assets/data/companyGUID.json",
+    "company"
+  );
 });
 
 export function processCompanyData(data) {

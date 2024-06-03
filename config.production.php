@@ -1,6 +1,7 @@
 <?php
 
 $baseUrl = 'https://qstar-inc.github.io/cities2-PrefabMaker';
+$repo = "/cities2-PrefabMaker";
 
 return [
     'production' => true,
@@ -11,5 +12,6 @@ return [
     'url' => $baseUrl,
     'keywords' => 'citiesskylines2, cities-skylines-2, cs2, skylines2, cities2',
     'author' => 'StarQ',
-    'images' => $baseUrl . "/assets/images",
+    'images' => $repo . "/assets/images",
+    'repo' => $repo,
 ];

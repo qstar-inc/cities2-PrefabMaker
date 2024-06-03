@@ -25,8 +25,8 @@
     <meta property="twitter:url" content="{{ $page->url }}" />
     <title>{{ $page->title }}</title>
 
-    <link rel="icon" type="image/x-icon" href="{{ url($page->images) }}/starq.ico">
-    <link rel="stylesheet" href="{{ url(mix('css/main.css', 'assets/build')) }}">
+    <link rel="icon" type="image/x-icon" href="{{ $page->images }}/starq.ico">
+    <link rel="stylesheet" href="{{ $page->repo . mix('css/main.css', 'assets/build') }}">
 </head>
 
 <body class="text-gray-900 font-sans antialiased">
@@ -47,7 +47,7 @@
             </div>
         </div>
         <div id="button-container" class="m-auto pb-2 border-2 border-bottom border-warning text-center">
-            <a class="btn btn-primary" href="brand">Brand Prefab</a>
+            <a class="btn btn-primary" href="{{ $page->repo . 'brand' }}">Brand Prefab</a>
             <button class="btn btn-primary" disabled>Toolbar Item</button>
         </div>
         @yield('body')
@@ -64,7 +64,7 @@
     <!-- Select2 JS-->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- Custom JS-->
-    <script defer src="{{ url(mix('js/main.js', 'assets/build')) }}"></script>
+    <script defer src="{{ $page->repo . mix('js/main.js', 'assets/build') }}"></script>
     @yield('js')
 </body>
 
