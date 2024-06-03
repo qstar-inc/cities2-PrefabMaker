@@ -72,5 +72,5 @@
 @endsection
 
 @section('js')
-    <script defer src="{{ mix('js/brand_maker.js', 'assets/build') }}"></script>
+    <script defer src="{{ url(mix('js/brand_maker.js', 'assets/build')) }}"></script>
 @endsection

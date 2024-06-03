@@ -16,4 +16,5 @@ mix
   .options({
     processCssUrls: false,
   })
+  .setResourceRoot("/cities2-PrefabMaker/assets/build/")
   .version();

@@ -14,19 +14,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:description" content="{{ $page->description }}" />
-    <meta property="og:image" content="{{ $page->url }}/{{ $page->images }}/thumb.jpg" />
+    <meta property="og:image" content="{{ $page->images }}/thumb.jpg" />
     <meta property="og:title" content="{{ $page->title }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ $page->url }}" />
-    <meta property="twitter:card" content="{{ $page->url }}/{{ $page->images }}/thumb.jpg" />
+    <meta property="twitter:card" content="{{ $page->images }}/thumb.jpg" />
     <meta property="twitter:description" content="{{ $page->description }}" />
-    <meta property="twitter:image" content="{{ $page->url }}/{{ $page->images }}/thumb.jpg" />
+    <meta property="twitter:image" content="{{ $page->images }}/thumb.jpg" />
     <meta property="twitter:title" content="{{ $page->title }}" />
     <meta property="twitter:url" content="{{ $page->url }}" />
     <title>{{ $page->title }}</title>
 
-    <link rel="icon" type="image/x-icon" href="{{ $page->images }}/starq.ico">
-    <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url($page->images) }}/starq.ico">
+    <link rel="stylesheet" href="{{ url(mix('css/main.css', 'assets/build')) }}">
 </head>
 
 <body class="text-gray-900 font-sans antialiased">
@@ -64,7 +64,7 @@
     <!-- Select2 JS-->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- Custom JS-->
-    <script defer src="{{ mix('js/main.js', 'assets/build') }}"></script>
+    <script defer src="{{ url(mix('js/main.js', 'assets/build')) }}"></script>
     @yield('js')
 </body>
 
