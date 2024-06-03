@@ -47,7 +47,7 @@
             </div>
         </div>
         <div id="button-container" class="m-auto pb-2 border-2 border-bottom border-warning text-center">
-            <a class="btn btn-primary" href="{{ $page->repo . 'brand' }}">Brand Prefab</a>
+            <a class="btn btn-primary" href="{{ $page->repo . '/brand' }}">Brand Prefab</a>
             <button class="btn btn-primary" disabled>Toolbar Item</button>
         </div>
         @yield('body')
