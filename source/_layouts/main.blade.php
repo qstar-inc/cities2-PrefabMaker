@@ -26,6 +26,7 @@
     <title>{{ $page->title }}</title>
 
     <link rel="icon" type="image/x-icon" href="{{ $page->images }}/starq.ico">
+    @yield('css')
     <link rel="stylesheet" href="{{ $page->repo . mix('css/main.css', 'assets/build') }}">
 </head>
 
