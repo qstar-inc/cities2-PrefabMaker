@@ -43,13 +43,18 @@
     <div id="blur-overlay" class="blur-overlay d-none"></div>
     <div class="page-content container-xxl mb-5 px-5">
         <div id="header-container" class="row">
-            <div class="d-flex justify-content-between align-items-center flex-wrap mt-5">
-                <h1 class="cities-font">Cities: Skylines II Prefab Maker</h1>
+            <h6 class="cities-font mx-auto mt-4 text-center"><a id="hide-text" data-bs-toggle="collapse" href=".multi-collapse" onclick="hideToolBrowser()">[Hide Tool Browser]</a></h6>
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <h1 class="cities-font collapse show multi-collapse">Cities: Skylines II Prefab Maker</h1>
             </div>
         </div>
-        <div id="button-container" class="m-auto pb-2 border-2 border-bottom border-warning text-center">
-            <a class="btn btn-primary" href="{{ $page->repo . '/brand' }}">Brand Prefab</a>
-            <button class="btn btn-primary" disabled>Toolbar Item</button>
+        <div class="collapse show multi-collapse" id="toolBrowser">
+            <div id="toolBrowser" id="button-container" class="d-flex flex-wrap text-nowrap justify-content-center pb-2 border-2 border-bottom border-warning text-center gap-2">
+                <a class="btn btn-primary" href="{{ $page->repo . '/brand' }}">Brand Prefab</a>
+                <a class="btn btn-primary" href="{{ $page->repo . '/zone' }}">Zone Prefab</a>
+                <button class="btn btn-primary" disabled>Toolbar Item</button>
+                <a class="btn btn-info" href="{{ $page->repo . '/brands-on-buildings' }}">Brand on Buildings</a>
+            </div>
         </div>
         @yield('body')
     </div>

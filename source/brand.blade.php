@@ -49,17 +49,7 @@
                     <input class="form-control form-control-color" type="color" id="colorPicker3" name="colorPicker3">
                 </div>
             </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" id="requiresDLC">
-                <label class="form-check-label" for="requiresDLC">Requires DLC (max 1) <a class="link-info" href="#" data-bs-toggle="tooltip" data-bs-placement="right"
-                        data-bs-title="Select if spawing this item should require owning a DLC."><i class="bi bi-question-circle"></i></a></label>
-                <div class="dlc-container">
-                    <button class="dlc-button" id="dlc-cs1th" type="button" title="Treasure Hunt" style="background-image: url('{{ $page->images }}/source/CS1TreasureHunt.svg');"></button>
-                    <button class="dlc-button" id="dlc-paradox" type="button" title="Link Paradox Account" style="background-image: url('{{ $page->images }}/source/Paradox.svg');"></button>
-                    <button class="dlc-button" id="dlc-landmark" type="button" title="Landmark Buildings" style="background-image: url('{{ $page->images }}/source/Landmark.svg');"></button>
-                    <button class="dlc-button" id="dlc-sanfrancisco" type="button" title="San Francisco Set" style="background-image: url('{{ $page->images }}/source/SanFran.svg');"></button>
-                </div>
-            </div>
+            @include('_partials/cs2_components/component-content-prerequisite')
             <div class="d-grid">
                 <input disabled class="v-stack-self-top btn btn-danger" id="generate-button" type="button" value="Generate" onclick="generateFiles()">
                 <button disabled class="v-stack-self-bottom btn btn-success" id="download-button" onclick="downloadFile()">Download</button>

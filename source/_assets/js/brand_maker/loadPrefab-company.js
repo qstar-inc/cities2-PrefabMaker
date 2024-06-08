@@ -1,5 +1,5 @@
 import { rgbToHex } from "../utils/colorPicker";
-import { resolveDlcNameFromGuid } from "../cs2_components/component-dlc";
+import { resolveDlcNameFromGuid } from "../cs2_components/component-content-prerequisite";
 
 document.addEventListener("DOMContentLoaded", function () {
   const fileUpload = document.getElementById("fileUpload");

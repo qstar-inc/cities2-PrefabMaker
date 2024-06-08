@@ -1,9 +1,8 @@
-export function joinWithComma(var1, var2) {
-  if (var1 && var2) {
-    return var1 + "," + var2;
-  } else {
-    return var1 || var2 || "";
-  }
+export function joinWithSeparator(separator = ",", ...values) {
+  const filteredValues = values.filter(
+    (value) => value != null && value != "" && typeof value !== "undefined"
+  );
+  return filteredValues.join(separator);
 }
 
 export function truncFixed(num, to = 0) {
@@ -52,7 +51,6 @@ export function copyPreContent(preElement) {
   navigator.clipboard.writeText(text).then(
     function () {
       var toastElement = document.getElementById("text-copied-toast");
-      // console.log(toastElement.innerHTML);
       var toast = new bootstrap.Toast(toastElement);
       toast.show();
     },

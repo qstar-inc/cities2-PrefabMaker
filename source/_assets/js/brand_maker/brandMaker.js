@@ -1,9 +1,13 @@
-import { hexToRgb01, isColorEmpty } from "../utils/colorPicker";
+import {
+  hexToRgb01,
+  isColorEmpty,
+  setupColorPicker,
+} from "../utils/colorPicker";
 import { getDLC } from "./requiresDLC";
 import { addGUID } from "../utils/utils-cs2";
-import { obsoleteComponent } from "../cs2_components/component-obsolete-identifier";
-import { dlcComponent } from "../cs2_components/component-dlc";
-import { joinWithComma, copyPreContent } from "../utils/utils";
+import { obsoleteComponent } from "../cs2_components/component-obsolete-identifiers";
+import { dlcComponent } from "../cs2_components/component-content-prerequisite";
+import { joinWithSeparator, copyPreContent } from "../utils/utils";
 
 document.addEventListener("DOMContentLoaded", function () {
   const shortNameInput = document.getElementById("shortname");
@@ -173,7 +177,7 @@ export function create_prefab_file(line_values) {
     component_count++;
   }
 
-  const components = joinWithComma(obsoleteText, dlcText);
+  const components = joinWithSeparator(",", obsoleteText, dlcText);
 
   return template
     .replaceAll("{shortname}", shortname)
@@ -204,3 +208,7 @@ function downloadFile() {
   document.body.removeChild(link);
 }
 window.downloadFile = downloadFile;
+
+setupColorPicker("hexInput1", "colorPicker1");
+setupColorPicker("hexInput2", "colorPicker2");
+setupColorPicker("hexInput3", "colorPicker3");

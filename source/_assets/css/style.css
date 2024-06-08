@@ -21,6 +21,7 @@ body {
 .v-stack-middle > * {
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
+  border-bottom: none;
 }
 .v-stack-bottom > *,
 .v-stack-middle > * {
@@ -45,6 +46,19 @@ body {
 
 .toast-container {
   bottom: 3rem !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  appearance: textfield;
+  /* -moz-appearance: textfield; */
 }
 
 .pre-copy {
@@ -113,14 +127,16 @@ pre {
   margin-top: -1px !important;
 }
 
-.dlc-container {
+.dlc-container,
+.theme-container {
   display: none;
   margin: auto;
   width: 50%;
   justify-content: center;
   gap: 15px;
 }
-.dlc-button {
+.dlc-button,
+.theme-button {
   flex-direction: row-reverse;
   border: none;
   background-color: transparent;
@@ -132,6 +148,7 @@ pre {
   background-repeat: no-repeat;
   filter: grayscale(100);
 }
-.dlc-button.selected {
+.dlc-button.selected,
+.theme-button.selected {
   filter: grayscale(0);
 }

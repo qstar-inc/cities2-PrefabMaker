@@ -1,6 +1,6 @@
 import { truncFixed } from "./utils";
 
-function setupColorPicker(hexInputId, colorPickerId) {
+export function setupColorPicker(hexInputId, colorPickerId) {
   const hexInput = document.getElementById(hexInputId);
   const colorPicker = document.getElementById(colorPickerId);
 
@@ -39,16 +39,12 @@ function setupColorPicker(hexInputId, colorPickerId) {
   }
 }
 
-setupColorPicker("hexInput1", "colorPicker1");
-setupColorPicker("hexInput2", "colorPicker2");
-setupColorPicker("hexInput3", "colorPicker3");
-
 export function isColorEmpty(color) {
   color = color == [] ? "#000000" : color;
   return color;
 }
 
-export function hexToRgb01(hex) {
+export function hexToRgb01(hex, indent = 16) {
   hex = hex.replace("#", "");
 
   let r = truncFixed(parseInt(hex.substring(0, 2), 16) / 255, 10);
@@ -58,7 +54,7 @@ export function hexToRgb01(hex) {
   let rgb01 = `${r},${g},${b},1`;
 
   const values = rgb01.split(",");
-  return values.join(",\n                ");
+  return values.join(",\n" + " ".repeat(indent));
 }
 
 export function rgbToHex(rgb) {

@@ -15,9 +15,14 @@
         const headerContainer = document.getElementById('header-container');
         const buttonContainer = document.getElementById('button-container');
         const getStartedContainer = document.getElementById('get-started-container');
+        if (buttonContainer == null) {
+            var buttonHeight = 0;
+        } else {
+            var buttonHeight = buttonContainer.offsetHeight;
+        }
 
         function updategetStartedContainerHeight() {
-            const totalHeight = window.innerHeight - (nav.offsetHeight + footer.offsetHeight + headerContainer.offsetHeight + buttonContainer.offsetHeight);
+            const totalHeight = window.innerHeight - (nav.offsetHeight + footer.offsetHeight + headerContainer.offsetHeight + buttonHeight);
             getStartedContainer.style.height = totalHeight * .9 + 'px';
         }
 
