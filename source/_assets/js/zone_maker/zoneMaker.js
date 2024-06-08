@@ -3,8 +3,6 @@ import {
   isColorEmpty,
   setupColorPicker,
 } from "../utils/colorPicker";
-// import { getDLC } from "./requiresDLC";
-// import { addGUID } from "../utils/utils-cs2";
 import { serviceCrime } from "../cs2_components/component-crime-accumulation";
 import { groupAmbience } from "../cs2_components/component-group-ambience";
 import { serviceMail } from "../cs2_components/component-mail-accumulation";
@@ -17,7 +15,7 @@ import {
   loadSelects,
 } from "../cs2_components/component-zone-properties";
 import { zoneServiceConsumption } from "../cs2_components/component-zone-service-consumption";
-import { joinWithSeparator } from "../utils/utils";
+import { copyPreContent, joinWithSeparator } from "../utils/utils";
 
 document.addEventListener("DOMContentLoaded", function () {
   const uiGroupSelector = document.getElementById("uiGroupSelector");
@@ -285,9 +283,6 @@ export function create_prefab_file(line_values) {
   ] = line_values;
 
   var componentCount = 0;
-  //   const companies = JSON.parse(companies_type);
-  //   const companies_count = companies.length;
-  //   const companies_text = addGUID(companies);
   var nextId = 2;
   var nextTypeId = 2;
   var usedId = 0;

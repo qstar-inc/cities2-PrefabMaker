@@ -7,7 +7,7 @@ import { getDLC } from "./requiresDLC";
 import { addGUID } from "../utils/utils-cs2";
 import { obsoleteComponent } from "../cs2_components/component-obsolete-identifiers";
 import { dlcComponent } from "../cs2_components/component-content-prerequisite";
-import { joinWithSeparator, copyPreContent } from "../utils/utils";
+import { copyPreContent, joinWithSeparator } from "../utils/utils";
 
 document.addEventListener("DOMContentLoaded", function () {
   const shortNameInput = document.getElementById("shortname");
