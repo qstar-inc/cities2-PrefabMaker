@@ -1,4 +1,15 @@
-export function zoneServiceConsumption(id, typeId, zoneServiceValues) {
+export function zoneServiceConsumption(id, typeId) {
+  const serviceUpkeep =
+    parseFloat(document.getElementById("serviceUpkeep").value) || 0;
+  const serviceElectricity =
+    parseFloat(document.getElementById("serviceElectricity").value) || 0;
+  const serviceWater =
+    parseFloat(document.getElementById("serviceWater").value) || 0;
+  const serviceGarbage =
+    parseFloat(document.getElementById("serviceGarbage").value) || 0;
+  const serviceTelecom =
+    parseFloat(document.getElementById("serviceTelecom").value) || 0;
+
   return [
     `
             {
@@ -14,11 +25,11 @@ export function zoneServiceConsumption(id, typeId, zoneServiceValues) {
             }`
       .replaceAll("{id}", id)
       .replaceAll("{typeId}", typeId)
-      .replaceAll("{upkeep}", zoneServiceValues[0])
-      .replaceAll("{electricity}", zoneServiceValues[1])
-      .replaceAll("{water}", zoneServiceValues[2])
-      .replaceAll("{garbage}", zoneServiceValues[3])
-      .replaceAll("{telecom}", zoneServiceValues[4]),
+      .replaceAll("{upkeep}", serviceUpkeep)
+      .replaceAll("{electricity}", serviceElectricity)
+      .replaceAll("{water}", serviceWater)
+      .replaceAll("{garbage}", serviceGarbage)
+      .replaceAll("{telecom}", serviceTelecom),
     1,
     1,
   ];

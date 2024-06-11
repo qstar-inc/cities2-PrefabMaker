@@ -52,7 +52,7 @@
             <div id="toolBrowser" id="button-container" class="d-flex flex-wrap text-nowrap justify-content-center pb-2 border-2 border-bottom border-warning text-center gap-2">
                 <a class="btn btn-primary" href="{{ $page->repo . '/brand' }}">Brand Prefab</a>
                 <a class="btn btn-primary" href="{{ $page->repo . '/zone' }}">Zone Prefab</a>
-                <button class="btn btn-primary" disabled>Toolbar Item</button>
+                <a class="btn btn-primary" href="{{ $page->repo . '/ui-asset' }}">UI Asset Prefab</a>
                 <a class="btn btn-info" href="{{ $page->repo . '/brands-on-buildings' }}">Brand on Buildings</a>
             </div>
         </div>

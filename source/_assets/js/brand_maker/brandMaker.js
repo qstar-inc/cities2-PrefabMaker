@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const generateButton = document.getElementById("generate-button");
   const selectedOptions = $("#companies_type");
 
-  var shortNameValid = !shortNameInput.value.includes(" ");
+  var shortNameValid =
+    !shortNameInput.value.includes(" ") && !shortNameInput.value == null;
   var companyValid = selectedOptions.val().length > 0;
 
   shortNameInput.addEventListener("input", function () {
@@ -40,6 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateButtonState() {
     if (shortNameValid && companyValid) {
+      console.log("shortNameValid: " + shortNameValid);
+      console.log("companyValid: " + companyValid);
       generateButton.disabled = false;
       generateButton.classList.remove("btn-danger");
       generateButton.classList.add("btn-primary");

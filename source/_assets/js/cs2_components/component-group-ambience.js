@@ -1,4 +1,7 @@
-export function groupAmbience(id, typeId, groupAmbienceValue) {
+export function groupAmbience(id, typeId) {
+  const groupAmbienceValue =
+    document.getElementById("groupAmbienceSelector").value || 0;
+
   return [
     `
             {

@@ -1,4 +1,6 @@
-export function serviceCrime(id, typeId, serviceCrimeValue) {
+export function serviceCrime(id, typeId) {
+  const serviceCrimeValue =
+    parseFloat(document.getElementById("serviceCrime").value) || 0;
   return [
     `
             {

@@ -16,6 +16,7 @@ mix
   .js("source/_assets/js/brand_maker.js", "js")
   .js("source/_assets/js/brands-on-buildings.js", "js")
   .js("source/_assets/js/zone_maker.js", "js")
+  .js("source/_assets/js/ui_asset_maker.js", "js")
   .css("source/_assets/css/main.css", "css", [
     require("postcss-import"),
     require("tailwindcss"),

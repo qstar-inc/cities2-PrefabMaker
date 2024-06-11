@@ -27,9 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-export function themeObject(id, typeId, themeObject) {
-  return [
-    `
+export function themeObject(id, typeId) {
+  const requiresTheme = document.getElementById("requiresTheme").checked;
+  const selectedTheme = document.querySelector(".theme-button.selected");
+  var themeValue, themeReturn;
+  if (requiresTheme && selectedTheme != null) {
+    themeValue = selectedTheme.id.replace("theme-", "");
+    themeReturn = [
+      `
             {
                 "$id": {id},
                 "$type": "{typeId}|Game.Prefabs.ThemeObject, Game",
@@ -37,12 +42,17 @@ export function themeObject(id, typeId, themeObject) {
                 "active": true,
                 "m_Theme": $fstrref:"UnityGUID:{themeID}"
             }`
-      .replaceAll("{id}", id)
-      .replaceAll("{typeId}", typeId)
-      .replaceAll("{themeID}", resolveTheme(themeObject)),
-    1,
-    1,
-  ];
+        .replaceAll("{id}", id)
+        .replaceAll("{typeId}", typeId)
+        .replaceAll("{themeID}", resolveTheme(themeValue)),
+      1,
+      1,
+    ];
+  } else {
+    themeReturn = ["", 0, 0];
+  }
+
+  return themeReturn;
 }
 
 function resolveTheme(themeObject) {

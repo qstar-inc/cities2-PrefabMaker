@@ -1,4 +1,11 @@
-export function zonePollution(id, typeId, zonePollutionValues) {
+export function zonePollution(id, typeId) {
+  const pollutionGround =
+    parseFloat(document.getElementById("pollutionGround").value) || 0;
+  const pollutionAir =
+    parseFloat(document.getElementById("pollutionAir").value) || 0;
+  const pollutionNoise =
+    parseFloat(document.getElementById("pollutionNoise").value) || 0;
+
   return [
     `
             {
@@ -12,9 +19,9 @@ export function zonePollution(id, typeId, zonePollutionValues) {
             }`
       .replaceAll("{id}", id)
       .replaceAll("{typeId}", typeId)
-      .replaceAll("{ground}", zonePollutionValues[0])
-      .replaceAll("{air}", zonePollutionValues[1])
-      .replaceAll("{noise}", zonePollutionValues[2]),
+      .replaceAll("{ground}", pollutionGround)
+      .replaceAll("{air}", pollutionAir)
+      .replaceAll("{noise}", pollutionNoise),
     1,
     1,
   ];

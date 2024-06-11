@@ -1,4 +1,11 @@
-export function serviceMail(id, typeId, serviceMailValues) {
+export function serviceMail(id, typeId) {
+  const serviceMailCollect =
+    document.getElementById("serviceMailCollect").checked;
+  const serviceMailSending =
+    parseFloat(document.getElementById("serviceMailSending").value) || 0;
+  const serviceMailReceiving =
+    parseFloat(document.getElementById("serviceMailReceiving").value) || 0;
+
   return [
     `
             {
@@ -12,9 +19,9 @@ export function serviceMail(id, typeId, serviceMailValues) {
             }`
       .replaceAll("{id}", id)
       .replaceAll("{typeId}", typeId)
-      .replaceAll("{requireCollect}", serviceMailValues[0])
-      .replaceAll("{sendingRate}", serviceMailValues[1])
-      .replaceAll("{receivingRate}", serviceMailValues[2]),
+      .replaceAll("{requireCollect}", serviceMailCollect)
+      .replaceAll("{sendingRate}", serviceMailSending)
+      .replaceAll("{receivingRate}", serviceMailReceiving),
     1,
     1,
   ];

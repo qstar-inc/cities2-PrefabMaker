@@ -114,12 +114,18 @@ pre {
   font-size: 0.8rem;
 }
 
+.select2-selection.select2-selection--single {
+  height: calc(3.5rem + calc(var(--bs-border-width) * 2));
+}
+
+.select2-selection.select2-selection--single,
 .select2-selection.select2-selection--multiple {
   padding: 1rem 0.75rem;
   border-radius: var(--bs-border-radius);
 }
 
-#companies_type {
+#companies_type,
+#uiGroupSelector {
   min-width: 100%;
 }
 
@@ -151,4 +157,11 @@ pre {
 .dlc-button.selected,
 .theme-button.selected {
   filter: grayscale(0);
+}
+
+.select-icon {
+  width: auto;
+  height: 20px;
+  vertical-align: middle;
+  padding-right: 10px;
 }

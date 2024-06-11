@@ -1,10 +1,23 @@
 <hr />
 <h5>UI Object</h5>
 <div>
-    <div class="form-floating mb-3">
-        <select disabled class="form-select mb-3" id="uiGroupSelector" aria-label="UI Group">
-        </select>
+    <div class="mb-3">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="uiGroupVanillaOrCustom" id="uiGroupVanilla" value="uiGroupVanilla" checked>
+            <label class="form-check-label" for="uiGroupVanilla">Vanilla</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="uiGroupVanillaOrCustom" id="uiGroupCustom" value="uiGroupCustom">
+            <label class="form-check-label" for="uiGroupCustom">Custom</label>
+        </div>
+    </div>
+    <div class="mb-3" id="uiGroupSelectorDiv">
         <label class="form-label" for="uiGroupSelector">UI Group</label>
+        <select disabled id="uiGroupSelector" name="uiGroupSelector" aria-label="UI Group"></select>
+    </div>
+    <div class="form-floating mb-3 d-none" id="uiGroupCIDDiv">
+        <input type="text" class="form-control" id="uiGroupCID" maxlength="32" minlength="32" placeholder="Custom UI Group CID">
+        <label for="uiGroupCID">Custom UI Group CID</label>
     </div>
     <div class="input-group mb-3">
         <div class="form-floating">

@@ -55,9 +55,6 @@
             @include('_partials/cs2_components/component-zone-service-consumption')
             @include('_partials/cs2_components/component-crime-accumulation')
             @include('_partials/cs2_components/component-mail-accumulation')
-            {{-- <label class="form-label" for="companies_type">Companies (at least one): <a class="link-info" href="#" data-bs-toggle="tooltip" data-bs-placement="right"
-                        data-bs-title="Select at least one type of company. This determines on what zones should it be possible to spawn this brand."><i class="bi bi-question-circle"></i></a></label>
-                <select disabled multiple id="companies_type" name="companies_type"></select> --}}
             @include('_partials/cs2_components/component-theme-object')
             @include('_partials/cs2_components/component-zone-properties')
             @include('_partials/cs2_components/component-ui-object')

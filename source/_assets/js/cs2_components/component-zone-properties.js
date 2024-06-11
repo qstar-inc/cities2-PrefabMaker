@@ -1,16 +1,42 @@
-export function zoneProperties(id, typeId, zonePropertiesValues) {
+export function zoneProperties(id, typeId) {
+  const scaleResidentials =
+    document.getElementById("scaleResidentials").checked;
+  const resiProp = parseFloat(document.getElementById("resiProp").value) || 0;
+  const spaceMultiplier =
+    parseFloat(document.getElementById("spaceMultiplier").value) || 0;
+  const fireHazard =
+    parseFloat(document.getElementById("fireHazard").value) || 0;
+  let allowedSoldArray = [];
+  const allowedSoldOptions = Array.from(
+    document.getElementById("allowedSold_select").selectedOptions
+  );
+  allowedSoldArray = JSON.stringify(
+    allowedSoldOptions.map((option) => option.getAttribute("value"))
+  );
   var [allowedSold, allowedSoldLength] =
-    zonePropertiesValues[4] != "[]"
-      ? processResource(zonePropertiesValues[4])
-      : ["", 0];
+    allowedSoldArray != "[]" ? processResource(allowedSoldArray) : ["", 0];
+
+  let allowedManufacturedArray = [];
+  const allowedManufacturedOptions = Array.from(
+    document.getElementById("allowedManufactured_select").selectedOptions
+  );
+  allowedManufacturedArray = JSON.stringify(
+    allowedManufacturedOptions.map((option) => option.getAttribute("value"))
+  );
   var [allowedManufactured, allowedManufacturedLength] =
-    zonePropertiesValues[5] != "[]"
-      ? processResource(zonePropertiesValues[5])
+    allowedManufacturedArray != "[]"
+      ? processResource(allowedManufacturedArray)
       : ["", 0];
+
+  let allowedStoredArray = [];
+  const allowedStoredOptions = Array.from(
+    document.getElementById("allowedStored_select").selectedOptions
+  );
+  allowedStoredArray = JSON.stringify(
+    allowedStoredOptions.map((option) => option.getAttribute("value"))
+  );
   var [allowedStored, allowedStoredLength] =
-    zonePropertiesValues[6] != "[]"
-      ? processResource(zonePropertiesValues[6])
-      : ["", 0];
+    allowedStoredArray != "[]" ? processResource(allowedStoredArray) : ["", 0];
 
   return [
     `
@@ -51,10 +77,10 @@ export function zoneProperties(id, typeId, zonePropertiesValues) {
       .replaceAll("{id3}", id + 3)
       .replaceAll("{typeId}", typeId)
       .replaceAll("{typeId1}", typeId + 1)
-      .replaceAll("{scaleResidentials}", zonePropertiesValues[0])
-      .replaceAll("{resiProp}", zonePropertiesValues[1])
-      .replaceAll("{spaceMultiplier}", zonePropertiesValues[2])
-      .replaceAll("{fireHazard}", zonePropertiesValues[3])
+      .replaceAll("{scaleResidentials}", scaleResidentials)
+      .replaceAll("{resiProp}", resiProp)
+      .replaceAll("{spaceMultiplier}", spaceMultiplier)
+      .replaceAll("{fireHazard}", fireHazard)
       .replaceAll("{allowedSold}", allowedSold)
       .replaceAll("{allowedManufactured}", allowedManufactured)
       .replaceAll("{allowedStored}", allowedStored)
