@@ -8,6 +8,7 @@ import { groupAmbience } from "../cs2_components/component-group-ambience";
 import { serviceMail } from "../cs2_components/component-mail-accumulation";
 import { themeObject } from "../cs2_components/component-theme-object";
 import {
+  initRadio,
   uiObject,
   uiGroupProcessor,
 } from "../cs2_components/component-ui-object";
@@ -20,6 +21,7 @@ import {
 import { zoneServiceConsumption } from "../cs2_components/component-zone-service-consumption";
 import { copyPreContent, joinWithSeparator } from "../utils/utils";
 
+initRadio();
 document.addEventListener("DOMContentLoaded", function () {
   const uiGroupSelector = document.getElementById("uiGroupSelector");
   const uiGroupSelectorOptions = [

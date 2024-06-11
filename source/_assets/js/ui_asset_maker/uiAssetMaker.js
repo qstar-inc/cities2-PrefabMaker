@@ -43,7 +43,6 @@ function load_categoryGroup(uiGroupSelector) {
 }
 
 initRadio();
-
 document.addEventListener("DOMContentLoaded", function () {
   const uiAssetMenuRadio = document.getElementById("uiAssetMenu");
   const uiAssetCategoryRadio = document.getElementById("uiAssetCategory");
