@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="author" content="StarQ">
+    <meta name="description" content="Create simple Prefab files for Cities: Skylines II">
+    <meta name="keywords" content="citiesskylines2, cities-skylines-2, cs2, skylines2, cities2">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="robots" content="index, follow">
+    <meta name="title" content="Cities: Skylines II Prefab Maker">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="Create simple Prefab files for Cities: Skylines II" />
+    <meta property="og:image" content="/cities2-PrefabMaker/assets/images/thumb.jpg" />
+    <meta property="og:title" content="Cities: Skylines II Prefab Maker" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://qstar-inc.github.io/cities2-PrefabMaker" />
+    <meta property="twitter:card" content="/cities2-PrefabMaker/assets/images/thumb.jpg" />
+    <meta property="twitter:description" content="Create simple Prefab files for Cities: Skylines II" />
+    <meta property="twitter:image" content="/cities2-PrefabMaker/assets/images/thumb.jpg" />
+    <meta property="twitter:title" content="Cities: Skylines II Prefab Maker" />
+    <meta property="twitter:url" content="https://qstar-inc.github.io/cities2-PrefabMaker" />
+    <title>Cities: Skylines II Prefab Maker</title>
+
+    <link rel="icon" type="image/x-icon" href="/cities2-PrefabMaker/assets/images/starq.ico">
+        <link rel="stylesheet" href="/cities2-PrefabMaker/assets/build/css/main.css?id=d988d8c4f101ad37c02823b770bb5a18">
+</head>
+
+<body class="text-gray-900 font-sans antialiased">
+    <!-- Navigation Bar -->
+<nav id="nav" class="navbar navbar-expand-lg bg-secondary fixed-top">
+    <div class="container-xxl">
+        <a class="navbar-brand" href="/cities2-PrefabMaker">
+            <img src="/cities2-PrefabMaker/assets/images/starq.svg" alt="StarQ" width="50" height="50" class="d-inline-block align-text-baseline" style="margin-top: -1rem !important;">
+            <span class="h1 cities-font">StarQ</span>
+        </a>
+        <a class="btn btn-outline-info me-2" type="button" href="https://qstar-inc.github.io/">About Me</a>
+        <button class="navbar-toggler" id="toaster" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+    <!-- Toast -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body cities-font">
+                                    Hello there! This does nothing (yet)!
+                
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+    <!-- FAQ Modal -->
+<div class="modal fade" id="faqModal" tabindex="-1" aria-labelledby="faqModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="faqModalLabel">Frequently Asked Questions</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <h4>Where is the Cities: Skylines II user data folder and where should the Prefab files be placed?</h4>
+                    <p class="mb-0">Cities: Skylines II user data folder is located at <code>%LocalAppData%Low\Colossal Order\Cities Skylines II\</code>.
+                        Within this directory, there are various subfolders for specific purposes.
+                    </p>
+                    <span>Place the above address on Run (<kbd>Win</kbd> + <kbd>R</kbd>) or Explorer (<kbd>Win</kbd> + <kbd>E</kbd>) address bar</span>
+                    <p class="mt-3">Prefab files can be placed anywhere within the user data folder, and they will load automatically.
+                        However, if a Prefab file is placed in a folder or subfolder that begins with a <code>.</code> (dot/period), it will not be loaded.
+                        But the preferred folder is <code>StreamingData~</code>.</p>
+                </div>
+                <hr class="m-auto mb-3" />
+                <div>
+                    <h4>How to get a CID for the Prefabs?</h4>
+                    <p>
+                        Every custom content in Cities: Skylines II requires a CID (Component Identifier). Each item created in-game automatically saves with a CID file, however externally made items
+                        won't work properly without a CID file. To obtain the CID for the Prefabs, follow these steps:
+                    <ol>
+                        <li>Open the game Editor.</li>
+                        <li>Select any object (like buildings, props, etc) from the Add Objects menu and plop it to the map.</li>
+                        <li>Select the object and on the details panel, click on the Duplicate button. This will add a duplicated object to your mouse pointer.</li>
+                        <li>Place the duplicated object on the map, and delete the original one from the map.</li>
+                        <li>Look at the Workspace panel on the left, and expand the Objects heading if necessary to view the Objects List. There should only be one item.</li>
+                        <li>Click the save icon beside the duplicated object (suffixed with <code> (copy)</code>). This will save this duplicated asset to the <code>StreamingData~</code> folder.</li>
+                        <li>On the <code>StreamingData~</code> folder, you'll see a folder named with the object you just saved. On the folder, you'll see one <code>.Prefab</code> file and one
+                            <code>.Prefab.cid</code> file. Delete the <code>.Prefab</code> file and rename the <code>.Prefab.cid</code> file to include the name of your custom content. For example, if
+                            your downloaded prefab is <code>StarQInc.Prefab</code>, your CID file name should be <code>StarQInc.Prefab.cid</code>. Place them in the same folder, according to the
+                            criteria mentioned above, and the item will load automatically in game.
+                        </li>
+                    </ol>
+                    </p>
+                    <p>There are numerous <em>other</em> methods to acquire a CID, but ensure they are generated within the game. It's advised against using random GUID generators, as they could
+                        become incompatible in the future, even if they currently function.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="spinner-overlay" class="spinner-overlay d-none">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div id="blur-overlay" class="blur-overlay d-none"></div>
+    <div class="page-content container-xxl mb-5 px-5">
+        <div id="header-container" class="row">
+            <h6 class="cities-font mx-auto mt-4 text-center"><a id="hide-text" data-bs-toggle="collapse" href=".multi-collapse" onclick="hideToolBrowser()">[Hide Tool Browser]</a></h6>
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <h1 class="cities-font collapse show multi-collapse">Cities: Skylines II Prefab Maker</h1>
+            </div>
+        </div>
+        <div class="collapse show multi-collapse" id="toolBrowser">
+            <div id="toolBrowser" id="button-container" class="d-flex flex-wrap text-nowrap justify-content-center pb-2 border-2 border-bottom border-warning text-center gap-2">
+                <a class="btn btn-primary" href="/cities2-PrefabMaker/brand">Brand Prefab</a>
+                <a class="btn btn-primary" href="/cities2-PrefabMaker/zone">Zone Prefab</a>
+                <a class="btn btn-primary" href="/cities2-PrefabMaker/ui-asset">UI Asset Prefab</a>
+                <a class="btn btn-info" href="/cities2-PrefabMaker/brands-on-buildings">Brand on Buildings</a>
+            </div>
+        </div>
+            <div class="modal fade" id="uiAssetModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">UI Asset Prefab</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>UI Asset Prefabs are responsible for generating the bottom toolbar icons and tabs in the game.
+                    Use this form to create your own toolbar icon or tab.</p>
+                <ul>
+                    <li>UI Asset Menu is for main Toolbar icons.</li>
+                    <li>UI Asset Category is for tabs on the menu opened from the toolbar.</li>
+                </ul>
+                <p>Once you've finished creating a UI asset, import your custom creation into the game by placing the Prefab file in the Cities: Skylines II user data folder.
+                    Additionally, ensure you have a CID (Component Identifier) for your custom content.</p>
+                <p>After completing these steps, you can publish your company as an Asset Pack Manager package in PDX Mods.
+                    But simply uploading the zone without incorporating other objects associated with it is not recommended.</p>
+                <p>Hover over the <i class="bi bi-question-circle"></i> icon on the labels below to learn more about that input.</p>
+                <div class="d-grid mb-2">
+                    <button class="btn btn-outline-info" data-bs-target="#faqModal" data-bs-toggle="modal">Learn more about user data folder and CID!</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Toast -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="text-copied-toast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body cities-font">
+                                    Text copied to your clipboard
+                
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+    <div class="">
+        <h2>UI Asset <a class="btn btn-info btn-sm py-0" data-bs-toggle="modal" data-bs-target="#uiAssetModal">Learn More</a></h2>
+        <form id="uiAssetFormLoad" autocomplete="off">
+            <div class="mb-3">
+                <label class="form-label" for="fileUpload">Load Prefab file (optional) <a class="link-info" href="#" data-bs-toggle="tooltip" data-bs-placement="right"
+                        data-bs-title="Load a previously generated Prefab file"><i class="bi bi-question-circle"></i></a></label>
+                <input disabled class="form-control" type="file" id="fileUpload" accept=".Prefab">
+            </div>
+        </form>
+        <form id="uiAssetForm" autocomplete="off">
+            <hr />
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="uiAssetMenuOrCategory" id="uiAssetMenu" value="uiAssetMenu">
+                <label class="form-check-label" for="uiAssetMenu">UI Asset Menu <a class="link-info" href="#" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Toolbar item"><i
+                            class="bi bi-question-circle"></i></a></label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="uiAssetMenuOrCategory" id="uiAssetCategory" value="uiAssetCategory">
+                <label class="form-check-label" for="uiAssetCategory">UI Asset Category <a class="link-info" href="#" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tab item"><i
+                            class="bi bi-question-circle"></i></a></label>
+            </div>
+            <hr />
+            <h5>UI Asset <span id="uiAssetTitle">...</span></h5>
+            <div class="form-floating mb-3">
+                <input disabled class="form-control" type="text" id="name" name="name" placeholder="Name">
+                <label class="form-label" for="name">Name</label>
+            </div>
+            <div id="components" class="d-none">
+                <hr />
+<h5>UI Object</h5>
+<div>
+    <div class="mb-3">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="uiGroupVanillaOrCustom" id="uiGroupVanilla" value="uiGroupVanilla" checked>
+            <label class="form-check-label" for="uiGroupVanilla">Vanilla</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="uiGroupVanillaOrCustom" id="uiGroupCustom" value="uiGroupCustom">
+            <label class="form-check-label" for="uiGroupCustom">Custom</label>
+        </div>
+    </div>
+    <div class="mb-3" id="uiGroupSelectorDiv">
+        <label class="form-label" for="uiGroupSelector">UI Group</label>
+        <select disabled id="uiGroupSelector" name="uiGroupSelector" aria-label="UI Group"></select>
+    </div>
+    <div class="form-floating mb-3 d-none" id="uiGroupCIDDiv">
+        <input type="text" class="form-control" id="uiGroupCID" maxlength="32" minlength="32" placeholder="Custom UI Group CID">
+        <label for="uiGroupCID">Custom UI Group CID</label>
+    </div>
+    <div class="input-group mb-3">
+        <div class="form-floating">
+            <input type="number" class="form-control" id="uiPriority" placeholder="Priority">
+            <label for="uiPriority">Priority</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="uiIcon" placeholder="Icon">
+            <label for="uiIcon">Icon</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="uiLargeIcon" placeholder="Large Icon">
+            <label for="uiLargeIcon">Large Icon</label>
+        </div>
+    </div>
+    <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="isDebugObject">
+        <label class="form-check-label" for="isDebugObject">Is Debug Object</label>
+    </div>
+</div>
+</div>
+            <div class="d-grid">
+                <input disabled class="v-stack-self-top btn btn-danger" id="generate-button" type="button" value="Generate" onclick="generateFiles()">
+                <button disabled class="v-stack-self-bottom btn btn-success" id="download-button" onclick="downloadFile()">Download</button>
+            </div>
+        </form>
+        <div>
+            <pre class="d-none" id="output"></pre>
+        </div>
+    </div>
+    </div>
+    <footer id="footer" class="footer bg-secondary fixed-bottom text-center">
+    <div class="d-flex m-2 justify-content-center gap-4">
+        <a class="" href="https://github.com/qstar-inc/cities2-PrefabMaker">
+            <svg class="octicon octicon-mark-github" height="32" style="fill:whitesmoke" aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true">
+                <path
+                    d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z" />
+            </svg>
+        </a>
+        <a class="" href="https://youtube.com/@StarQGaming">
+            <svg id="yt_icon_mono_dark" height="32" style="fill:whitesmoke" aria-hidden="true" viewBox="0 0 176 124" version="1.1" data-view-component="true">
+                <path
+                    d="M172.32,19.36A22.12,22.12,0,0,0,156.76,3.7C143,0,88,0,88,0S33,0,19.24,3.7A22.12,22.12,0,0,0,3.68,19.36C0,33.18,0,62,0,62s0,28.82,3.68,42.64A22.12,22.12,0,0,0,19.24,120.3C33,124,88,124,88,124s55,0,68.76-3.7a22.12,22.12,0,0,0,15.56-15.66C176,90.82,176,62,176,62S176,33.18,172.32,19.36ZM70,88.17V35.83L116,62Z" />
+            </svg>
+        </a>
+        <a class="" href="https://www.paypal.com/paypalme/qounik">
+            <svg id="paypal_svg" height="32" style="stroke:#fff; fill:none; stroke-width:63.33" aria-hidden="true" viewBox="0 0 702 758" version="1.1" data-view-component="true">
+                <path d="M653.3,241.7h0c1,104.9-83.4,190.7-188.3,191.6H279.7l-38,253.4H83.3l95-633.4h285C567.6,53.3,652.4,137.4,653.3,241.7Z" transform="translate(-46.6 -21.7)" />
+                <path d="M652.3,257.7A188.4,188.4,0,0,1,716.7,400c-.2,104.9-85.2,189.8-190,190H406.3L382.7,748.3H224.3l9-63.3" transform="translate(-46.6 -21.7)" />
+            </svg></svg>
+        </a>
+        <a class="" href="https://discord.gg/U2PSjUzUuF">
+            <svg id="discord-mark-logos" height="32" style="fill:whitesmoke" aria-hidden="true" viewBox="0 0 127.14 96.36" version="1.1" data-view-component="true">
+                <path
+                    d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" />
+            </svg>
+        </a>
+    </div>
+</footer>
+    <script>
+        0
+    </script>
+    <!-- Jquery JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 JS-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- Custom JS-->
+    <script defer src="/cities2-PrefabMaker/assets/build/js/main.js?id=8e5825ca10ddcac65b422f6cb1ee7f82"></script>
+        <script defer src="/cities2-PrefabMaker/assets/build/js/ui_asset_maker.js?id=75678f0bc903f0e5b91d4e4d78db2d0d"></script>
+</body>
+
+</html>

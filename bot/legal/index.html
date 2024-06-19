@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="author" content="StarQ">
+    <meta name="description" content="A Discord bot that brings the latest mods and content updates from PDX Mods directly to your server.">
+    <meta name="keywords" content="citiesskylines2, cities-skylines-2, cs2, skylines2, cities2">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="robots" content="index, follow">
+    <meta name="title" content="Cities 2 Modding Bot">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="A Discord bot that brings the latest mods and content updates from PDX Mods directly to your server." />
+    <meta property="og:image" content="/cities2-PrefabMaker/assets/images/thumb.jpg" />
+    <meta property="og:title" content="Cities 2 Modding Bot" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://qstar-inc.github.io/cities2-PrefabMaker" />
+    <meta property="twitter:card" content="/cities2-PrefabMaker/assets/images/thumb.jpg" />
+    <meta property="twitter:description" content="A Discord bot that brings the latest mods and content updates from PDX Mods directly to your server." />
+    <meta property="twitter:image" content="/cities2-PrefabMaker/assets/images/thumb.jpg" />
+    <meta property="twitter:title" content="Cities 2 Modding Bot" />
+    <meta property="twitter:url" content="https://qstar-inc.github.io/cities2-PrefabMaker" />
+    <title>Cities 2 Modding Bot</title>
+
+    <link rel="icon" type="image/x-icon" href="/cities2-PrefabMaker/assets/images/starq.ico">
+        <link rel="stylesheet" href="/cities2-PrefabMaker/assets/build/css/main.css?id=d988d8c4f101ad37c02823b770bb5a18">
+</head>
+
+<body class="text-gray-900 font-sans antialiased">
+    <!-- Navigation Bar -->
+<nav id="nav" class="navbar navbar-expand-lg bg-secondary fixed-top">
+    <div class="container-xxl">
+        <a class="navbar-brand" href="/cities2-PrefabMaker">
+            <img src="/cities2-PrefabMaker/assets/images/starq.svg" alt="StarQ" width="50" height="50" class="d-inline-block align-text-baseline" style="margin-top: -1rem !important;">
+            <span class="h1 cities-font">StarQ</span>
+        </a>
+        <a class="btn btn-outline-info me-2" type="button" href="https://qstar-inc.github.io/">About Me</a>
+        <button class="navbar-toggler" id="toaster" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+    <!-- Toast -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body cities-font">
+                                    Hello there! This does nothing (yet)!
+                
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+    <!-- FAQ Modal -->
+<div class="modal fade" id="faqModal" tabindex="-1" aria-labelledby="faqModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="faqModalLabel">Frequently Asked Questions</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <h4>Where is the Cities: Skylines II user data folder and where should the Prefab files be placed?</h4>
+                    <p class="mb-0">Cities: Skylines II user data folder is located at <code>%LocalAppData%Low\Colossal Order\Cities Skylines II\</code>.
+                        Within this directory, there are various subfolders for specific purposes.
+                    </p>
+                    <span>Place the above address on Run (<kbd>Win</kbd> + <kbd>R</kbd>) or Explorer (<kbd>Win</kbd> + <kbd>E</kbd>) address bar</span>
+                    <p class="mt-3">Prefab files can be placed anywhere within the user data folder, and they will load automatically.
+                        However, if a Prefab file is placed in a folder or subfolder that begins with a <code>.</code> (dot/period), it will not be loaded.
+                        But the preferred folder is <code>StreamingData~</code>.</p>
+                </div>
+                <hr class="m-auto mb-3" />
+                <div>
+                    <h4>How to get a CID for the Prefabs?</h4>
+                    <p>
+                        Every custom content in Cities: Skylines II requires a CID (Component Identifier). Each item created in-game automatically saves with a CID file, however externally made items
+                        won't work properly without a CID file. To obtain the CID for the Prefabs, follow these steps:
+                    <ol>
+                        <li>Open the game Editor.</li>
+                        <li>Select any object (like buildings, props, etc) from the Add Objects menu and plop it to the map.</li>
+                        <li>Select the object and on the details panel, click on the Duplicate button. This will add a duplicated object to your mouse pointer.</li>
+                        <li>Place the duplicated object on the map, and delete the original one from the map.</li>
+                        <li>Look at the Workspace panel on the left, and expand the Objects heading if necessary to view the Objects List. There should only be one item.</li>
+                        <li>Click the save icon beside the duplicated object (suffixed with <code> (copy)</code>). This will save this duplicated asset to the <code>StreamingData~</code> folder.</li>
+                        <li>On the <code>StreamingData~</code> folder, you'll see a folder named with the object you just saved. On the folder, you'll see one <code>.Prefab</code> file and one
+                            <code>.Prefab.cid</code> file. Delete the <code>.Prefab</code> file and rename the <code>.Prefab.cid</code> file to include the name of your custom content. For example, if
+                            your downloaded prefab is <code>StarQInc.Prefab</code>, your CID file name should be <code>StarQInc.Prefab.cid</code>. Place them in the same folder, according to the
+                            criteria mentioned above, and the item will load automatically in game.
+                        </li>
+                    </ol>
+                    </p>
+                    <p>There are numerous <em>other</em> methods to acquire a CID, but ensure they are generated within the game. It's advised against using random GUID generators, as they could
+                        become incompatible in the future, even if they currently function.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="spinner-overlay" class="spinner-overlay d-none">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div id="blur-overlay" class="blur-overlay d-none"></div>
+    <div class="page-content container-xxl">
+        <div id="header-container" class="row">
+            <h6 class="cities-font mx-auto mt-4 text-center"></h6>
+            <div class="m-auto">
+                <h1 class="cities-font collapse show multi-collapse text-center">StarQ's Cities: Skylines II Modding Bot</h1>
+            </div>
+        </div>
+            <div class="container">
+        <a class="text-center" href="https://discord.com/oauth2/authorize?client_id=1138819493045489694" target=”_blank”>
+            <h3>Add the bot to your Discord profile/server</h3>
+        </a>
+    </div>
+    <div class="container my-2">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">Terms of Service</h1>
+                <p><strong>Effective Date: June 18, 2024</strong></p>
+
+                <h2>1. Introduction</h2>
+                <p>Welcome to our <b>StarQ's Cities: Skylines II Modding Bot</b> service ("Service"). By using our <b>Cities 2 Modding Bot</b> Discord bot ("Bot"), you agree to comply with and be bound by
+                    the following terms and conditions ("Terms of Service"). Please review these terms carefully. If you do not agree to these terms, you should not use our Service.</p>
+
+                <h2>2. Description of Service</h2>
+                <p>The Bot retrieves User-Generated Content (UGC) information from <a href="https://mods.paradoxplaza.com">Paradox Mods</a>. The Bot stores some information on a private server to provide
+                    quick access without accessing the server every time. The Bot can be used in direct messages (DM) with the Bot, DM with friend(s), privately on any server you're in, and publicly on
+                    any server that the Bot is in.</p>
+
+                <h2>3. User Consent</h2>
+                <p>By using the Bot, you consent to the collection and use of your information as described in this Privacy Policy below. You have the right to withdraw your consent at any time. To
+                    withdraw consent, remove the bot from your server or profile's Authorized App section.</p>
+
+                <h2>4. Compliance</h2>
+                <p>The Bot operates in compliance with the End User License Agreement (EULA) and Terms of Service imposed by Paradox Interactive <a href="https://legal.paradoxplaza.com/eula">here</a>.</p>
+
+                <h2>5. Disclaimer and Limitation of Liability</h2>
+                <p>The Bot is provided "as is" and "as available" without any warranties of any kind, either express or implied. We do not warrant that the Bot will be uninterrupted or error-free. In no
+                    event shall we be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or in connection with the use of the Bot.</p>
+
+                <h2>6. Data Removal Request</h2>
+                <p>We comply with applicable data protection laws, including GDPR and CCPA. If you do not want any of your mods or your profile to be shown by the Bot, you can contact the Bot developer
+                    (StarQ) to request the removal of your data. StarQ will process such
+                    requests in a timely manner.</p>
+
+                <h2>7. Termination</h2>
+                <p>We reserve the right to terminate or suspend your access to the Bot at our sole discretion, without notice, for conduct that we believe violates these Terms or is harmful to other users
+                    of the Bot, us, or third parties, or for any other reason.</p>
+
+                <h2>8. Modifications to Terms</h2>
+                <p>We may modify these Terms at any time. We will notify you of any changes by posting the new Terms on this page. Your continued use of the Bot after such modifications will constitute
+                    your acknowledgment of the modified Terms and agreement to abide and be bound by the modified Terms.</p>
+
+                <h2>9. Contact Information</h2>
+                <p>For any questions about these Terms, please contact the Bot developer on the <a href="https://discord.gg/U2PSjUzUuF">StarQ Discord server</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-2">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">Privacy Policy</h1>
+                <p><strong>Effective Date: June 18, 2024</strong></p>
+
+                <h2>1. Introduction</h2>
+                <p>This Privacy Policy explains how our Discord Bot ("Bot") collects, uses, and discloses information from users. By using our Bot, you agree to the collection and use of information in
+                    accordance with this policy.</p>
+
+                <h2>2. Information Collection and Use</h2>
+                <p>The Bot collects UGC information and metadata from <a href="https://mods.paradoxplaza.com">Paradox Mods</a>. It may also collects Discord user IDs and server IDs necessary for its
+                    operation.</p>
+
+                <h2>3. Data Storage</h2>
+                <p>Data is stored on a private server to provide quick access without repeatedly accessing the API.</p>
+
+                <h2>4. Data Removal</h2>
+                <p>To remove your data, contact the developer (StarQ). Requests will be processed promptly.</p>
+
+                <h2>5. Data Security</h2>
+                <p>We take reasonable measures to protect the data we collect from unauthorized access, use, or disclosure. However, no method of transmission over the Internet or method of electronic
+                    storage is 100% secure. That being said, most of our collected information is public and can be accessed manually by other means.</p>
+
+                <h2>6. Compliance with Discord Policies</h2>
+                <p>Our Bot complies with Discord's Terms of Service and Community Guidelines. We respect the privacy and data of all Discord users and operate within the bounds of Discord's policies.</p>
+
+                <h2>7. Changes to This Privacy Policy</h2>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. Your continued use of the Bot after such changes
+                    will constitute your acknowledgment of the changes and your consent to abide and be bound by the updated Privacy Policy.</p>
+
+                <h2>8. Contact Information</h2>
+                <p>If you have any questions about this Privacy Policy, please contact the Bot developer on the <a href="https://discord.gg/U2PSjUzUuF">StarQ Discord server</a>.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer id="footer" class="footer bg-secondary fixed-bottom text-center">
+    <div class="d-flex m-2 justify-content-center gap-4">
+        <a class="" href="https://github.com/qstar-inc/cities2-PrefabMaker">
+            <svg class="octicon octicon-mark-github" height="32" style="fill:whitesmoke" aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true">
+                <path
+                    d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z" />
+            </svg>
+        </a>
+        <a class="" href="https://youtube.com/@StarQGaming">
+            <svg id="yt_icon_mono_dark" height="32" style="fill:whitesmoke" aria-hidden="true" viewBox="0 0 176 124" version="1.1" data-view-component="true">
+                <path
+                    d="M172.32,19.36A22.12,22.12,0,0,0,156.76,3.7C143,0,88,0,88,0S33,0,19.24,3.7A22.12,22.12,0,0,0,3.68,19.36C0,33.18,0,62,0,62s0,28.82,3.68,42.64A22.12,22.12,0,0,0,19.24,120.3C33,124,88,124,88,124s55,0,68.76-3.7a22.12,22.12,0,0,0,15.56-15.66C176,90.82,176,62,176,62S176,33.18,172.32,19.36ZM70,88.17V35.83L116,62Z" />
+            </svg>
+        </a>
+        <a class="" href="https://www.paypal.com/paypalme/qounik">
+            <svg id="paypal_svg" height="32" style="stroke:#fff; fill:none; stroke-width:63.33" aria-hidden="true" viewBox="0 0 702 758" version="1.1" data-view-component="true">
+                <path d="M653.3,241.7h0c1,104.9-83.4,190.7-188.3,191.6H279.7l-38,253.4H83.3l95-633.4h285C567.6,53.3,652.4,137.4,653.3,241.7Z" transform="translate(-46.6 -21.7)" />
+                <path d="M652.3,257.7A188.4,188.4,0,0,1,716.7,400c-.2,104.9-85.2,189.8-190,190H406.3L382.7,748.3H224.3l9-63.3" transform="translate(-46.6 -21.7)" />
+            </svg></svg>
+        </a>
+        <a class="" href="https://discord.gg/U2PSjUzUuF">
+            <svg id="discord-mark-logos" height="32" style="fill:whitesmoke" aria-hidden="true" viewBox="0 0 127.14 96.36" version="1.1" data-view-component="true">
+                <path
+                    d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" />
+            </svg>
+        </a>
+    </div>
+</footer>
+    <script>
+        0
+    </script>
+    <!-- Jquery JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS-->
+    <script defer src="/cities2-PrefabMaker/assets/build/js/main.js?id=8e5825ca10ddcac65b422f6cb1ee7f82"></script>
+    </body>
+
+</html>
