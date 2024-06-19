@@ -1,6 +1,11 @@
 @extends('_layouts.bot')
 
 @section('body')
+    <div class="container">
+        <a class="text-center" href="https://discord.com/oauth2/authorize?client_id=1138819493045489694" target=”_blank”>
+            <h3>Add the bot to your Discord profile/server</h3>
+        </a>
+    </div>
     <div class="container my-2">
         <div class="card">
             <div class="card-body">
