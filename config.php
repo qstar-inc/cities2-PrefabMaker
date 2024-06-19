@@ -14,4 +14,6 @@ return [
     'author' => 'StarQ',
     'images' => $repo . "/assets/images",
     'repo' => $repo,
+    'bot_title' => 'Cities 2 Modding Bot',
+    'bot_description' => 'A Discord bot that brings the latest mods and content updates from PDX Mods directly to your server.',
 ];
